@@ -7,7 +7,7 @@ A simple and intuitive TODO list application built with Angular for the frontend
 
 1. Install [Node.js](https://nodejs.org) - version used v22.14.0
 2. Install MongoDB (locally like MongoDB Compass or a cloud-based instance like MongoDB Atlas)
-3. Clone the TODO-APP git repository ``
+3. Clone the TODO-APP git repository `https://github.com/tejapathakoti/TODO.git`
 4. Setting up Backend: 
     1. Navigate to cd todo-app/backend and run => `npm install`
     2. Build backend server using => `npm run build`
