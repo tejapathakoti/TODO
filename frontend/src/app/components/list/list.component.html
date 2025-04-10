@@ -1,0 +1,101 @@
+<div class="centered-content">
+  <div class="list-container">
+
+      <div class="sidebar">
+          <h1 class="title has-text-primary">LISTS</h1>
+
+          <div class="list-menu">
+
+              <!-- Use async pipe to subscribe to lists$ and display them -->
+              <ng-container *ngIf="lists$ | async as lists">
+                <a
+                  class="list-menu-item"
+                  *ngFor="let list of lists"
+                  [routerLink]="['/lists', list._id]"
+                  routerLinkActive="is-active"
+                >
+                  <p>{{ list.title }}</p>
+                </a>
+              </ng-container>
+          </div>
+
+          <button class="button is-primary has-text-white" routerLink="/new-list">New List</button>
+      </div>
+
+      <div class="tasks-list-container">
+          <!-- Show tasks only when tasks$ has been loaded -->
+          <div *ngIf="tasks$ | async as tasks; else noTasks">
+              <div class="top-bar">
+                  <h1 class="title has-text-primary">
+                    Tasks
+                  </h1>
+
+                  <!-- ✅ Task Statistics -->
+                  <div class="task-stats">
+                      <p class="has-text-primary">Completed: {{ completedCount }}</p>
+                      <p>Remaining: {{ remainingCount }}</p>
+                  </div>
+                        
+
+
+                  <div class="dropdown is-hoverable is-right">
+                    <div class="dropdown-trigger">
+                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+                          <span>List Options</span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                      <div class="dropdown-content">
+                        <a [routerLink]="['/edit-list', selectedListId]" class="dropdown-item">
+                          Edit
+                        </a>
+                        <a (click)="onDeleteListClicked()" class="dropdown-item has-text-danger">
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="task-list-scroll">
+                  <!-- Task Elements -->
+                  <div class="task" *ngFor="let task of tasks" (click)="onTaskClicked(task)" [ngClass]="{ 'completed': task.completed }">
+                    <i *ngIf="task.completed" class="fas fa-check-circle completed-icon"></i>
+                      <div class="task-text">
+                          <p>{{ task.title }}</p>
+                          <p class="task-desc">{{ task.description }}</p>
+                      </div>
+
+                      <div class="task-buttons">
+                          <button class="button" [routerLink]="['/lists', selectedListId, 'edit-task', task._id]">
+                              <div class="icon">
+                                  <i class="fas fa-edit"></i>
+                              </div>
+                          </button>
+
+                          <button class="button is-danger" (click)="onDeleteTaskClicked(task._id)" style="margin-left: 10px;">
+                              <div class="icon">
+                                  <i class="fas fa-trash"></i>
+                              </div>
+                          </button>
+                      </div>
+                  </div>
+              </div>   
+
+              <h3 class="empty-state-text" *ngIf="tasks.length === 0">
+                  There are no tasks here! Click the add button to create a new task.
+              </h3>
+
+              <button class="circle-add-button button is-primary" routerLink="./new-task">
+                  +
+              </button>
+          </div>
+
+          <!-- Display when there are no tasks selected -->
+          <ng-template #noTasks>
+              <h3 class="empty-state-text">Please select a list from the sidebar</h3>
+          </ng-template>
+
+      </div>
+  </div>
+</div>

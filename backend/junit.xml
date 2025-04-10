@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="35" failures="0" errors="0" time="1.7082425">
+    <testsuite name="src/app.test.ts" timestamp="2025-04-10T20:56:13.832Z" hostname="LAPTOP-BM022TQA" tests="4" failures="0" errors="0" skipped="0" time="0.0438943">
+        <testcase classname="src/app.test.ts" name="App &gt; should be defined" time="0.0010329">
+        </testcase>
+        <testcase classname="src/app.test.ts" name="App &gt; should connect to MongoDB" time="0.0002873">
+        </testcase>
+        <testcase classname="src/app.test.ts" name="App &gt; should return 200 OK for the root endpoint" time="0.0161083">
+        </testcase>
+        <testcase classname="src/app.test.ts" name="App &gt; CORS Middleware &gt; should include the correct CORS headers" time="0.0252435">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/database/mongoose.test.ts" timestamp="2025-04-10T20:56:13.834Z" hostname="LAPTOP-BM022TQA" tests="1" failures="0" errors="0" skipped="0" time="0.0443555">
+        <testcase classname="src/database/mongoose.test.ts" name="MongoDB Connection &gt; should connect to Mongoose DataBase" time="0.0015491">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/routes/listRoutes.test.ts" timestamp="2025-04-10T20:56:13.835Z" hostname="LAPTOP-BM022TQA" tests="12" failures="0" errors="0" skipped="0" time="0.1228398">
+        <testcase classname="src/routes/listRoutes.test.ts" name="List Routes &gt; GET /lists &gt; should return a list of lists" time="0.0299364">
+        </testcase>
+        <testcase classname="src/routes/listRoutes.test.ts" name="List Routes &gt; GET /lists &gt; should handle errors" time="0.0130925">
+            <system-out>
+error: Error: DB Error
+    at [90mC:\Users\SuryaPathakoti\todo-app\backend\[39msrc\routes\listRoutes.test.ts:63:44
+    at [90mfile:///C:/Users/SuryaPathakoti/todo-app/backend/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:103:11
+    at [90mfile:///C:/Users/SuryaPathakoti/todo-app/backend/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:595:26
+    at [90mfile:///C:/Users/SuryaPathakoti/todo-app/backend/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:877:20
+    at new Promise (&lt;anonymous&gt;)
+    at runWithTimeout [90m(file:///C:/Users/SuryaPathakoti/todo-app/backend/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:850:10[90m)[39m
+    at runTest [90m(file:///C:/Users/SuryaPathakoti/todo-app/backend/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:1345:12[90m)[39m
+[90m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at runSuite [90m(file:///C:/Users/SuryaPathakoti/todo-app/backend/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:1491:8[90m)[39m
+    at runSuite [90m(file:///C:/Users/SuryaPathakoti/todo-app/backend/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:1491:8[90m)[39m
+
+            </system-out>
+        </testcase>
+        <testcase classname="src/routes/listRoutes.test.ts" name="List Routes &gt; GET /lists/:id &gt; should return a single list" time="0.0062614">
+        </testcase>
+        <testcase classname="src/routes/listRoutes.test.ts" name="List Routes &gt; GET /lists/:id &gt; should handle errors" time="0.0049593">
+        </testcase>
+        <testcase classname="src/routes/listRoutes.test.ts" name="List Routes &gt; GET /lists/:listId/tasks &gt; should return tasks for a list" time="0.0066864">
+        </testcase>
+        <testcase classname="src/routes/listRoutes.test.ts" name="List Routes &gt; GET /lists/:listId/tasks &gt; should handle errors" time="0.004833">
+        </testcase>
+        <testcase classname="src/routes/listRoutes.test.ts" name="List Routes &gt; POST /lists &gt; should create a new list" time="0.0169957">
+        </testcase>
+        <testcase classname="src/routes/listRoutes.test.ts" name="List Routes &gt; POST /lists &gt; should handle save error" time="0.005206">
+        </testcase>
+        <testcase classname="src/routes/listRoutes.test.ts" name="List Routes &gt; PUT /lists/:id &gt; should update a list" time="0.0102425">
+        </testcase>
+        <testcase classname="src/routes/listRoutes.test.ts" name="List Routes &gt; PUT /lists/:id &gt; should handle update error" time="0.0113148">
+        </testcase>
+        <testcase classname="src/routes/listRoutes.test.ts" name="List Routes &gt; DELETE /lists/:id &gt; should delete a list" time="0.0050524">
+        </testcase>
+        <testcase classname="src/routes/listRoutes.test.ts" name="List Routes &gt; DELETE /lists/:id &gt; should handle delete error" time="0.0042796">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/routes/taskRoutes.test.ts" timestamp="2025-04-10T20:56:13.838Z" hostname="LAPTOP-BM022TQA" tests="8" failures="0" errors="0" skipped="0" time="0.0884477">
+        <testcase classname="src/routes/taskRoutes.test.ts" name="Task Routes &gt; GET /lists/:listId/tasks/:taskId &gt; should return a task" time="0.0338668">
+        </testcase>
+        <testcase classname="src/routes/taskRoutes.test.ts" name="Task Routes &gt; GET /lists/:listId/tasks/:taskId &gt; should handle errors" time="0.0071009">
+        </testcase>
+        <testcase classname="src/routes/taskRoutes.test.ts" name="Task Routes &gt; POST /lists/:listId/tasks &gt; should create a new task" time="0.0197438">
+        </testcase>
+        <testcase classname="src/routes/taskRoutes.test.ts" name="Task Routes &gt; POST /lists/:listId/tasks &gt; should handle save error" time="0.0055139">
+        </testcase>
+        <testcase classname="src/routes/taskRoutes.test.ts" name="Task Routes &gt; PUT /lists/:listId/tasks/:taskId &gt; should update a task" time="0.0064978">
+        </testcase>
+        <testcase classname="src/routes/taskRoutes.test.ts" name="Task Routes &gt; PUT /lists/:listId/tasks/:taskId &gt; should handle update error" time="0.0050551">
+        </testcase>
+        <testcase classname="src/routes/taskRoutes.test.ts" name="Task Routes &gt; DELETE /lists/:listId/tasks/:taskId &gt; should delete a task" time="0.0045367">
+        </testcase>
+        <testcase classname="src/routes/taskRoutes.test.ts" name="Task Routes &gt; DELETE /lists/:listId/tasks/:taskId &gt; should handle delete error" time="0.0034444">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/database/models/list.model.test.ts" timestamp="2025-04-10T20:56:13.840Z" hostname="LAPTOP-BM022TQA" tests="5" failures="0" errors="0" skipped="0" time="0.6755881">
+        <testcase classname="src/database/models/list.model.test.ts" name="List Model Tests &gt; should create and save a List successfully" time="0.0261191">
+        </testcase>
+        <testcase classname="src/database/models/list.model.test.ts" name="List Model Tests &gt; should throw an error if title is missing" time="0.0010274">
+        </testcase>
+        <testcase classname="src/database/models/list.model.test.ts" name="List Model Tests &gt; should retrieve a list by title" time="0.0112002">
+        </testcase>
+        <testcase classname="src/database/models/list.model.test.ts" name="List Model Tests &gt; should update a list title successfully" time="0.0050948">
+        </testcase>
+        <testcase classname="src/database/models/list.model.test.ts" name="List Model Tests &gt; should delete a list successfully" time="0.0067982">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/database/models/task.model.test.ts" timestamp="2025-04-10T20:56:13.840Z" hostname="LAPTOP-BM022TQA" tests="5" failures="0" errors="0" skipped="0" time="0.7331171">
+        <testcase classname="src/database/models/task.model.test.ts" name="Task Model Tests &gt; should create and save a Task successfully" time="0.0253979">
+        </testcase>
+        <testcase classname="src/database/models/task.model.test.ts" name="Task Model Tests &gt; should throw an error if title is missing" time="0.0020636">
+        </testcase>
+        <testcase classname="src/database/models/task.model.test.ts" name="Task Model Tests &gt; should retrieve a task by ID" time="0.0128842">
+        </testcase>
+        <testcase classname="src/database/models/task.model.test.ts" name="Task Model Tests &gt; should update a task successfully" time="0.0058111">
+        </testcase>
+        <testcase classname="src/database/models/task.model.test.ts" name="Task Model Tests &gt; should delete a task successfully" time="0.0069647">
+        </testcase>
+    </testsuite>
+</testsuites>
